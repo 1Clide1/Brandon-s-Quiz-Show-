@@ -256,7 +256,7 @@ input {
   margin-bottom: 1rem;
 }
 /* media selectors for mobile accessibility */
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 414px) {
   /* body {
     width: 100vw;
     height: 100vh;
