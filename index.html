@@ -1,70 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brandon's Javascript Quiz Show!</title>
-    <link rel="stylesheet" href="Assets/style.css">
+    <link rel="stylesheet" href="Assets/style.css" />
     <!-- cool icons from LineIcons  -->
-    <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css" />
     <!-- makes sure it loads after the body -->
     <script defer src="Assets/quiz-logic.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-            <!-- cool class trick if you space out your class name you can actually create two different css "markers" under one class element :D-->
-        <div class="flex-column flex-center">
-            <div id="intro-container" class="hideintro">
-            <h1 class="intro-title">Are You Ready To Play?</h1>
-            <p class="intro-text">The game is simple, do you know your javascript fundamentals? Well if not prepare to learn!
-                <br>
-                You will be asked a series of questions, if you get them <span class="right-text" style="font-size: 3rem;">right</span> you will earn 100 points, however if you guess <span class="wrong-text" style="font-size: 3rem;">wrong</span> you'll lose 48 points.
-                <br>
-                Try your best and make sure to answer all of them before the timer runs out! Once you are done you can save your highscore, just make sure to enter your initials.
-
-            </p>
+      <!-- cool class trick if you space out your class name you can actually create two different css "markers" under one class element :D-->
+      <div class="flex-column flex-center">
+        <div id="intro-container" class="hideintro">
+          <h1 class="intro-title">Are You Ready To Play?</h1>
+          <p class="intro-text">
+            The game is simple, do you know your javascript fundamentals? Well
+            if not prepare to learn!
+            <br />
+            You will be asked a series of questions, if you get them
+            <span class="right-text" style="font-size: 3rem">right</span> you
+            will earn 100 points, however if you guess
+            <span class="wrong-text" style="font-size: 3rem">wrong</span> you'll
+            lose 48 points.
+            <br />
+            Try your best and make sure to answer all of them before the timer
+            runs out! Once you are done you can save your highscore, just make
+            sure to enter your initials.
+          </p>
         </div>
         <!-- controls for the intro -->
-                    <div id="controls" class="Controls">
-                    <button id ="play-btn" class="Play-btn">Play<i class="lni lni-play"></i></button>
-                    <button id="highscore-btn" class="Highscore-btn">High Scores<i class="lni lni-crown"></i></button>
-                    </div>
-            <!-- handles the game over screen -->
-            <div id="Time-out" class="game-over">
-                <h1 class="time-out-title">Time is Up!</h1>
-                <h1 id="Final-score">0</h1>
-                <form class="form-container">
-                    <h2 id="save-text">Enter your initials below to save your score!</h2>
-                    <input type="text" name="name" id="intitials" placeholder="Enter your initials">
-                    <!-- makes sure the button submits something in this case scores which when clicked a function in js handles the score being saved on local storage and disabled is there to use as a feauture to make sure you can't hit save without writing something down -->
-                    <button class="Highscore-btn" id="save-score-Btn" type="submit" onclick="saveHighScore()" disabled>Save</button>
-                </form>
-            </div>
-            <div id="highscores" class="hide-highscores">
-                <div class="highscores-container">
-                    <p>Refresh to try again!</p>
-                    <h1 id="Final-score-lb">Leaderboard:</h1>
-                    <ul id="highscores-list"></ul>
-                </div>
-            </div>
-            <!-- handles the score and count down for the game screen -->
-                    <div id="question-container" class="Hidequestion">
-                        <p id="count-down-timer" class="countdown-timer">90</p>
-                        <p id="score" class="hud-score">
-                            0
-                        </p>
-                        <!-- question section for the game -->
-                        <div id="Question">Question</div>
-                            <div id="answer-btns" class="btn-row">
-                    <button class="btn">answer 1</button>
-                    <button class="btn">answer 2</button>
-                    <button class="btn">answer 3</button>
-                    <button class="btn">answer 4</button>
-                            </div>
-                    </div>
+        <div id="controls" class="Controls">
+          <button id="play-btn" class="Play-btn">
+            Play<i class="lni lni-play"></i>
+          </button>
+          <button id="highscore-btn" class="Highscore-btn">
+            High Scores<i class="lni lni-crown"></i>
+          </button>
         </div>
-
+        <!-- handles the game over screen -->
+        <div id="Time-out" class="game-over">
+          <h1 class="time-out-title">Time is Up!</h1>
+          <h1 id="Final-score">0</h1>
+          <form class="form-container">
+            <h2 id="save-text">
+              Enter your initials below to save your score!
+            </h2>
+            <input
+              type="text"
+              name="name"
+              id="intitials"
+              placeholder="Enter your initials"
+            />
+            <!-- makes sure the button submits something in this case scores which when clicked a function in js handles the score being saved on local storage and disabled is there to use as a feauture to make sure you can't hit save without writing something down -->
+            <button
+              class="Highscore-btn"
+              id="save-score-Btn"
+              type="submit"
+              onclick="saveHighScore()"
+              disabled
+            >
+              Save
+            </button>
+          </form>
+        </div>
+        <div id="highscores" class="hide-highscores">
+          <div class="highscores-container">
+            <p>Refresh to try again!</p>
+            <h1 id="Final-score-lb">Leaderboard:</h1>
+            <ul id="highscores-list"></ul>
+          </div>
+        </div>
+        <!-- handles the score and count down for the game screen -->
+        <div id="question-container" class="Hidequestion">
+          <p id="count-down-timer" class="countdown-timer">90</p>
+          <p id="score" class="hud-score">0</p>
+          <!-- question section for the game -->
+          <div id="Question">Question</div>
+          <div id="answer-btns">
+            <button class="btn">answer 1</button>
+            <button class="btn">answer 2</button>
+            <button class="btn">answer 3</button>
+            <button class="btn">answer 4</button>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
