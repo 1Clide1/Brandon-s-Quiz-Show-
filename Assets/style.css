@@ -1,263 +1,292 @@
 /* import link to the google font */
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
-
-:root{
-    background-color: rgb(29, 26, 26);
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
+/* setting the colors in root */
+:root {
+  --bgcolor: rgb(29, 26, 26);
 }
 * {
-    /* cool tech font from google fonts */
-font-family: 'Share Tech', sans-serif;
-/* cool font trick 1rem=16px but with this trick 1rem=10px and for me that is needed that way it's easier and more simple to adjust the size if needed */
-font-size: 62.5%;
-/* general sizing */
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+  /* cool tech font from google fonts */
+  font-family: "Share Tech", sans-serif;
+  /* cool font trick 1rem=16px but with this trick 1rem=10px and for me that is needed that way it's easier and more simple to adjust the size if needed */
+  font-size: 62.5%;
+  /* general sizing */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 /* text styling */
-h1{
-    font-size: 7rem;
-    margin-bottom: 1rem;
-    color: white;
+h1 {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+  color: white;
 }
 /* main h1 title */
-.intro-title{
-    margin-bottom: 5rem;
+.intro-title {
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  margin-bottom: 5rem;
 }
 /* title for outro/game over */
-.time-out-title{
-margin-bottom: 5rem;
+.time-out-title {
+  margin-bottom: 5rem;
 }
-h2{
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: white;
+h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: white;
 }
-p{
-    font-size: 3rem;
-    color: white;
-    
+p {
+  font-size: 3rem;
+  color: white;
 }
 /* intro text styling */
-.intro-text{
-    margin-bottom: 5rem;
+.intro-text {
+  margin-bottom: 5rem;
 }
 /* just to make clear what is right and what is wrong using the colors I already have that assign buttons correct or wrong colors */
-.right-text{
-    color:#add73f
+.right-text {
+  color: #add73f;
 }
-.wrong-text{
-    color:red
+.wrong-text {
+  color: red;
 }
 /* question id text */
-#Question{
-    font-size: 5rem;
-    margin-bottom: 2rem;
-    color: white;
+#Question {
+  display: flex;
+  flex-direction: column;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  color: white;
 }
 /* body styling */
-body{
-    text-align: center;
-    justify-content: center;
-    overflow-x: hidden;
+body {
+  background-color: var(--bgcolor);
+  overflow-x: hidden;
 }
 /* for the class called container that holds all the elements */
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    /* makes sure the content in this class is always centered */
-    margin: 0;
-    padding: 2rem;
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
 }
-.flex-column{
-    display: flex;
-    flex-direction: column;
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
-.flex-center{
-    justify-content: center;
-    align-items: center;
+.flex-center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 /* hides the questions*/
-.Hidequestion{
-    display: none;
+.Hidequestion {
+  display: none;
 }
 /* hides the intro */
-.hideintro{
-    display: none;
+.hideintro {
+  display: none;
 }
 /* hides play and highscore buttons */
-.Controls{
-    display: none;
+.Controls {
+  display: none;
 }
 /* hides play button */
-.lni-play{
-    display: none;
+.lni-play {
+  display: none;
 }
 /* for the buttons I made */
 /* answer buttons */
-.btn{
-    display: flex;
-    flex-direction: row;
-    cursor: pointer;
-    font-size: 5rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    width: 50rem;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0.8715861344537815) 0%, rgba(102,49,147,0.9640231092436975) 0%, rgba(198,58,152,0.8939950980392157) 100%);
-    border-radius: 3rem;
-    color: #fff990;
+#answer-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.Play-btn{
-    /* that way it actually looks like you are suppose to click the button */
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    font-size: 5rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0.8715861344537815) 0%, rgba(102,49,147,0.9640231092436975) 0%, rgba(198,58,152,0.8939950980392157) 100%);
-    border-radius: 3rem;
-    color: #fff990;
+.btn {
+  cursor: pointer;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  /* padding: 1rem; */
+  width: 50rem;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.8715861344537815) 0%,
+    rgba(102, 49, 147, 0.9640231092436975) 0%,
+    rgba(198, 58, 152, 0.8939950980392157) 100%
+  );
+  border-radius: 3rem;
+  color: #fff990;
 }
-.Highscore-btn{
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    font-size: 5rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0.8715861344537815) 0%, rgba(102,49,147,0.9640231092436975) 0%, rgba(198,58,152,0.8939950980392157) 100%);
-    border-radius: 3rem;
-    color: #fff990;
+.Play-btn {
+  /* that way it actually looks like you are suppose to click the button */
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.8715861344537815) 0%,
+    rgba(102, 49, 147, 0.9640231092436975) 0%,
+    rgba(198, 58, 152, 0.8939950980392157) 100%
+  );
+  border-radius: 3rem;
+  color: #fff990;
+}
+.Highscore-btn {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.8715861344537815) 0%,
+    rgba(102, 49, 147, 0.9640231092436975) 0%,
+    rgba(198, 58, 152, 0.8939950980392157) 100%
+  );
+  border-radius: 3rem;
+  color: #fff990;
 }
 /* if you hover over the buttons it turns green :) */
-.Play-btn:hover{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0.8715861344537815) 0%, rgba(173,215,63,1) 0%, rgba(184,215,103,1) 100%);
-    /* just found this out I can give little animation to these buttons by using the transform and transition tag/option */
-    /* how fast the transition will be */
-    transition: 200ms;
-    /* how large the button will grow */
-    transform: scale(1.1);
+.Play-btn:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.8715861344537815) 0%,
+    rgba(173, 215, 63, 1) 0%,
+    rgba(184, 215, 103, 1) 100%
+  );
+  /* just found this out I can give little animation to these buttons by using the transform and transition tag/option */
+  /* how fast the transition will be */
+  transition: 200ms;
+  /* how large the button will grow */
+  transform: scale(1.1);
 }
 /* changes the highscore hover color to make play and highscore diffrent from each other used id to separate the two */
-.Highscore-btn:hover{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0.8715861344537815) 0%, rgba(198,58,152,1) 0%, rgba(242,113,200,1) 100%);
-    transition: 200ms;
-    transform: scale(1.1);
+.Highscore-btn:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.8715861344537815) 0%,
+    rgba(198, 58, 152, 1) 0%,
+    rgba(242, 113, 200, 1) 100%
+  );
+  transition: 200ms;
+  transform: scale(1.1);
 }
 /* these two are here for js that way I can say whether an answer was wrong or correct */
-.correct{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0.8715861344537815) 0%, rgba(173,215,63,1) 0%, rgba(184,215,103,1) 100%);
+.correct {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.8715861344537815) 0%,
+    rgba(173, 215, 63, 1) 0%,
+    rgba(184, 215, 103, 1) 100%
+  );
 }
-.wrong{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0.8715861344537815) 0%, rgba(228,10,47,1) 0%, rgba(235,87,107,1) 100%);
+.wrong {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.8715861344537815) 0%,
+    rgba(228, 10, 47, 1) 0%,
+    rgba(235, 87, 107, 1) 100%
+  );
 }
 /* for the score hud, not sure where i messed up but the way I wrote this in js I really can't change where the score is placed in the website but luckily it was placed pretty much where i was going to put it anyways*/
-.hud-score #score{
+#score {
+  display: flex;
+  justify-content: center;
 }
-.countdown-timer{
-    display: flex;
-    position: relative;
-    left: 80rem;
-    bottom: 17rem;
+#count-down-timer {
+  display: flex;
+  justify-content: flex-start;
 }
 /* section for the save highscore function */
-.form-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-input{
-    margin-bottom: 1rem;
-    padding: 1rem;
-    width: 30rem;
-    font-size: 3rem;
-    border-radius: 3rem;
+input {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 30rem;
+  font-size: 3rem;
+  border-radius: 3rem;
 }
-.game-over{
-    display: none;
+.game-over {
+  display: none;
 }
 /* for when I need to have the save button disabled */
 /* brackets because disabled isn't actually a class */
-.Highscore-btn[disabled]:hover{
-    cursor: not-allowed;
-    transform: none;
-    transition: none;
+.Highscore-btn[disabled]:hover {
+  cursor: not-allowed;
+  transform: none;
+  transition: none;
 }
 /* highscore section */
 /* hide highscore section */
-.hide-highscores{
-    display: none;
+.hide-highscores {
+  display: none;
 }
-.highscores-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
+.highscores-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
-#highscores-list{
-list-style: none;
-font-size: 3rem;
-margin-bottom: 1rem;
+#highscores-list {
+  list-style: none;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
-.highscore-list{
-font-size: 3rem;
-margin-bottom: 1rem;
+.highscore-list {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 /* media selectors for mobile accessibility */
-@media only screen 
-  and (min-device-width: 374px)
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-        *{
-            box-sizing: border-box;
-        }
-        body{
-          width: 100vw;
-          height: 100vh;
-      }
-      .btn{
-          font-size: 3rem;
-          width: 30rem;
-          padding: 1rem;
-          margin-bottom: 1rem;
-      }
-      h1{
-          font-size: 4rem;
-          margin-bottom: 2rem;
-      }
-      .hud-score{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        left: 13rem;
-        bottom:30rem;
-    }
-    .countdown-timer{
-        bottom: 10rem;
-        left: 28rem;
-    }
-    .hud-score{
-        position: relative;
-        bottom: 19rem;
-        left: -11rem;
-    }
-    .intro-text{
-        margin-bottom: 2rem;
-        font-size: 2rem;
-
-    }
+@media screen and (max-width: 330px) {
+  /* body {
+    width: 100vw;
+    height: 100vh;
+  } */
+  .btn {
+    font-size: 3rem;
+    width: 30rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+  /* .hud-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    left: 13rem;
+    bottom: 30rem;
+  }
+  .countdown-timer {
+    bottom: 10rem;
+  } */
+  #Question {
+    font-size: 1.56rem;
+  }
+  .intro-text {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
 }
